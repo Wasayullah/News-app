@@ -58,8 +58,6 @@ const API_KEY = "YOUR_API_KEY";
 const url = `https://newsapi.org/v2/everything?q=${query}&language=en&sortBy=publishedAt&pageSize=20&apiKey=${API_KEY}`;
 ```
 
-> ⚠️ **Important:** Never publish your real API key in a public GitHub repository. For production applications, use environment variables and a backend server to protect your API credentials.
-
 ## ▶️ How to Run
 
 ### 1. Clone the Repository
