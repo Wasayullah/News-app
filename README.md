@@ -88,7 +88,8 @@ with your NewsAPI key.
 
 ### 4. Run the Application
 
-You can open `index.html` directly in your browser or use **Live Server** in Visual Studio Code.
+ Use **Live Server** in Visual Studio Code or create a local server in python using the command >> python -m http.server 8080.
+ The free version of News API donot work in developer mode it can only used with a local server
 
 ## 📸 Application Preview
 
