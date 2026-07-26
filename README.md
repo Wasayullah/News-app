@@ -28,7 +28,7 @@ A modern and responsive **News Web Application** built using **HTML, CSS, JavaSc
 ## 📂 Project Structure
 
 ```text
-M549-News/
+News-app/
 │
 ├── index.html
 ├── app.js
