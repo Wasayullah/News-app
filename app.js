@@ -8,14 +8,43 @@ let findNews = () => {
             data.articles.map((value) => {
             
             getNews.innerHTML += `
-            <div class="card" style="width: 18rem;">
-                <img src="${value.urlToImage}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${value.title}</h5>
-                    <p class="card-text">${value.description}</p>
-                    <a href="${value.url}" class="btn btn-primary" target="_blank">Read more</a>
-                </div>
-            </div>
+<div class="card news-card h-100">
+
+    <!-- News Image -->
+    <img 
+        src="${value.urlToImage || 'https://via.placeholder.com/600x350?text=No+Image'}"
+        class="card-img-top"
+        alt="${value.title || 'News Image'}"
+    >
+
+    <!-- Card Content -->
+    <div class="card-body d-flex flex-column">
+
+        <!-- News Title -->
+        <h5 class="card-title">
+            ${value.title || 'No title available'}
+        </h5>
+
+        <!-- News Description -->
+        <p class="card-text">
+            ${value.description || 'No description available for this news.'}
+        </p>
+
+        <!-- Read More Button -->
+        <a 
+            href="${value.url}"
+            class="btn btn-primary mt-auto"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Read More
+            <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+        </a>
+
+    </div>
+
+</div>
+
         `
             })
         })

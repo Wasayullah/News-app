@@ -4,71 +4,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>M549-News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-</head>
-
-<body>
+    <title>M549 News | Latest News</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #f5f5f5;
+            font-family: "Poppins", sans-serif;
+            background: #f4f7fb;
+            color: #1d3557;
+            min-height: 100vh;
         }
 
+        .navbar-custom {
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            padding: 18px 5%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-        .copyrights {
-            width: 100%;
-            text-align: center;
-            margin-top: 25px;
-            padding: 10px 0;
-            background: #1d3557;
+        .brand {
             color: white;
-            font-size: large;
-            position: fixed;
-            bottom: 0;
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
 
+        .brand i {
+            margin-right: 8px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #1d3557;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #6c757d;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .search-container {
+            width: min(90%, 700px);
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px 15px;
+            font-size: 1rem;
+        }
+
+        .search-box input:focus {
+            box-shadow: none;
+        }
+
+        .search-btn {
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
         }
 
         #main {
+            width: min(95%, 1400px);
+            margin: 0 auto;
+            padding: 20px 0 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+    
+        }
+
+        .news-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-card .card-img-top {
             width: 100%;
-            margin: auto;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-card .card-body {
+            padding: 20px;
+        }
+
+        .news-card .card-title {
+            color: #1d3557;
+            font-size: 1.1rem;
+            font-weight: 600;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-card .card-text {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.6;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-card .btn {
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .news-card .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .copyrights {
+            width: 100%;
+            background: #1d3557;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
             margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 30px;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .copyrights p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .copyrights i {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+
+            .navbar-custom {
+                padding: 15px 20px;
+            }
+
+            .brand {
+                font-size: 1.4rem;
+            }
+
+            .hero {
+                padding: 40px 15px 25px;
+            }
+
+            .search-container {
+                width: 90%;
+            }
+
+            .search-box {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .search-btn {
+                width: 100%;
+            }
+
+            #main {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+        }
+
+
+        @media (max-width: 400px) {
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+            }
+
+            .news-card img {
+                height: 180px;
+            }
+
+            .news-content {
+                padding: 15px;
+            }
+
+            .copyrights {
+                padding: 20px 10px;
+            }
+
+            .copyrights p {
+                font-size: 0.8rem;
+            }
         }
     </style>
-    <br>
-    <div class="heading d-flex justify-content-center">
-        <h1>NEWS-APP</h1>
-    </div>
-    <div  class="search w-50 d-flex justify-content-center m-auto gap-1 ">
-        <input id="search" type="search" class="p-1 w-50 rounded-2 form-control" placeholder="Explore news"><button onclick="findNews()" class="btn  btn-outline-primary">Search</button>
-    </div>
-<div id="main">
-
-</div>
+</head>
 
 
-    <footer class="copyrights">
-        <p>&copy; 2026 M-549 News. All rights reserved.</p>
+<body>
+    <header class="navbar-custom">
+        <a href="#" class="brand">
+            <i class="fa-solid fa-newspaper"></i>
+            M549 News
+        </a>
+    </header>
+    <section class="hero">
+
+        <h1>Latest News</h1>
+
         <p>
-            <i class="fas fa-code"></i> Developer Mohammad wasayullah
+            Stay informed with the latest news and stories from around the world.
+            Search for topics that interest you.
         </p>
-    </footer>
 
+    </section>
+    <section class="search-container">
+
+        <div class="search-box">
+
+            <input id="search" type="search" placeholder="Search for news..." aria-label="Search news">
+
+            <button onclick="findNews()" class="btn btn-primary search-btn">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+
+            </button>
+
+        </div>
+
+    </section>
+    <main id="main">
+    </main>
+    <footer class="copyrights">
+
+        <p>
+            <i class="fas fa-code"></i>
+            Developed by Mohammad Wasayullah
+        </p>
+
+        <p>
+            &copy; 2026 M549 News. All rights reserved.
+        </p>
+
+    </footer>
     <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
 </body>
 
 </html>
