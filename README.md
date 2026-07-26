@@ -73,7 +73,7 @@ git clone https://github.com/Wasayullah/News-app.git
 Navigate to the project folder:
 
 ```bash
-cd M549-News
+cd News-app
 ```
 
 ### 3. Add Your API Key
