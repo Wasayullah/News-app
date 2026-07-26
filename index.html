@@ -50,20 +50,18 @@
             padding-bottom: 30px;
         }
     </style>
-    <header>
-        <h1>📰M-549 News</h1>
-
-        <div class="search-box">
-            <input type="text" id="search" placeholder="Search news...">
-            <button onclick="searchNews()">Search</button>
-        </div>
-    </header>
-
-    <h2 id="status"></h2>
-
-    <div id="main">
-        <h1 style="color:#1d3557 ; text-align:center">NEWS</h1>
+    <br>
+    <div class="heading d-flex justify-content-center">
+        <h1>NEWS-APP</h1>
     </div>
+    <div  class="search w-50 d-flex justify-content-center m-auto gap-1 ">
+        <input id="search" type="search" class="p-1 w-50 rounded-2 form-control" placeholder="Explore news"><button onclick="findNews()" class="btn  btn-outline-primary">Search</button>
+    </div>
+<div id="main">
+<h1>
+    NEWS
+</h1>
+</div>
 
 
     <footer class="copyrights">
