@@ -2,7 +2,7 @@ let search = document.getElementById("search")
 let getNews = document.getElementById("main")
 let findNews = () => {
     getNews.innerHTML = ''
-    fetch(`https://newsapi.org/v2/everything?q=${search.value}&language=en&sortBy=publishedAt&pageSize=20&apiKey=8623961ef42042b3a6773c81a381262d`)
+    fetch(`https://newsapi.org/v2/everything?q=${search.value}&language=en&sortBy=publishedAt&pageSize=20&apiKey={API-KEY}`)
         .then((data) => data.json())
         .then((data) => {
             data.articles.map((value) => {
