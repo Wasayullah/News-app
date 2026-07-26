@@ -121,6 +121,3 @@ Passionate about web development, JavaScript, APIs, and building modern applicat
 This project is created for educational and learning purposes.
 
 © 2026 **M549 News**. All rights reserved.
-
-```
-```
