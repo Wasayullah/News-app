@@ -2,6 +2,8 @@
 
 A modern and responsive **News Web Application** built using **HTML, CSS, JavaScript, Bootstrap, and NewsAPI**. The application allows users to search for the latest news and read complete articles from their original sources.
 
+
+
 ## 🚀 Live Features
 
 * 🔎 Search news by keyword
