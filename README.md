@@ -20,7 +20,7 @@ A modern and responsive **News Web Application** built using **HTML, CSS, JavaSc
 * 🛡️ Error handling for missing images and descriptions
 
 ## 🛠️ Technologies Used
-
+..
 * **HTML5** – Website structure
 * **CSS3** – Custom styling and responsive design
 * **JavaScript (ES6+)** – API integration and dynamic content
