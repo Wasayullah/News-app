@@ -6,6 +6,7 @@ A modern and responsive **News Web Application** built using **HTML, CSS, JavaSc
 
 ## 🚀 Live Features
 
+
 * 🔎 Search news by keyword
 * 📰 Display multiple news articles dynamically
 * 🖼️ News images with fallback support
